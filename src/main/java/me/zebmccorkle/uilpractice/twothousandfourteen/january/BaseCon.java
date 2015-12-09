@@ -3,9 +3,6 @@ package me.zebmccorkle.uilpractice.twothousandfourteen.january;
 import java.io.File;
 import java.util.Scanner;
 
-/**
- * Created by 19mccorkle.zebulon on 12/9/2015.
- */
 public class BaseCon {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(new File("basecon.in"));
