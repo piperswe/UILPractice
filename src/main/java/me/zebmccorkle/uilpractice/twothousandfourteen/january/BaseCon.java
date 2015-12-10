@@ -1,11 +1,15 @@
 package me.zebmccorkle.uilpractice.twothousandfourteen.january;
 
-import java.io.File;
+import java.io.*;
 import java.util.Scanner;
 
 public class BaseCon {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(new File("basecon.in"));
+        algo(new FileInputStream(new File("basecon.dat")), System.out);
+    }
+
+    public static void algo(InputStream inputStream, OutputStream outputStream) throws IOException {
+        Scanner scanner = new Scanner(inputStream);
 
         int amount = scanner.nextInt();
         for (int i = 0; i < amount; i++) {
@@ -25,7 +29,7 @@ public class BaseCon {
                 default:
                     intVal = Integer.parseInt(val);
             }
-            System.out.printf("%d %x %o %s%n", intVal, intVal, intVal, Integer.toBinaryString(intVal));
+            outputStream.write(String.format("%d %x %o %s%n", intVal, intVal, intVal, Integer.toBinaryString(intVal)).getBytes());
         }
     }
 }
